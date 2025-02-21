@@ -432,20 +432,20 @@ file_server
 Replace the above code with the following code.
 
 ```yaml
-example.com {
+:80 {
     root * /var/www/html
     file_server
     log {
-		output file /var/log/caddy/example.com.access.log {
-			roll_size 3MiB
-	        roll_keep 5
-	        roll_keep_for 48h
-        	}
+        output file /var/log/caddy/example.com.access.log {
+            roll_size 3MiB
+            roll_keep 5
+            roll_keep_for 48h
+            }
         format json
-    	}
+        }
     encode gzip zstd
     php_fastcgi unix//run/php/php8.1-fpm.sock
-	}
+    }
 ```
 
 Let us go through all sections of the `Caddyfile` below.
