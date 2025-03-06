@@ -595,6 +595,7 @@ Then we have to go back to the web server directory and set the `/var/www/exampl
 ```shell
 cd /var/www/example.com/html
 sudo chown caddy:caddy -Rf ./usr/uploads/
+## For other cases: sudo chown www-data:www-data ./usr/uploads/
 sudo chmod 755 -R ./usr/uploads/
 ```
 
@@ -611,6 +612,7 @@ The reason is because `.../example.com/html/` folder is owned by `root` user whi
 
 ```shell
 sudo chown -R caddy:caddy /var/www/html/
+## For other cases: sudo chown www-data:www-data /var/www/typecho/
 ```
 
 Then refresh the webpage of `Initial Configuration`, the you will be okay to proceed to next page:
@@ -623,6 +625,10 @@ Then you will reach the final step:
 
 Enjoy the show!
 
-
+## 7- Backup and Restore MySQL database
+ A simple way to achieve such is to use a tool called `mariadb-dump`. 
+ 
+ Here is the detailed procedure for your reference.
+ [mariadb-dump](./Backup%20and%20Restore%20Databases%20with%20mariadb-dump.md) 
 
 ## The End
